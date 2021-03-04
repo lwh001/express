@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>锚点位置偏移</title>
+<style>
+		body,h2,p{
+			margin:0;
+			padding:0;
+		}
+		h2,p{
+			width:500px;
+			position:relative;
+		}
+		p{
+			height:400px;
+			background:#CCC;
+			z-index:2;
+		}
+		p.extra{
+			margin:0 0 500px;
+		}
+		h2{
+			margin:-200px 0 0;
+			border-top:200px solid #000;
+			z-index:1;
+			background:#06F;
+		}
+		#anchor1{
+			margin:0;
+		}
+		span{
+			position:fixed !important; position:absolute;
+			top:200px;
+			left:510px;
+		}
+		#menu{ 
+			background:#CCC; 
+			position:fixed !important; 
+			position:absolute;
+			left:510px;
+			 top:2px; 
+			}
+</style>
+</head>
+<body>
+<h2 id="anchor1">锚点111111111111111111111</h2>
+<p>有一定高度的层</p>
+<h2 id="anchor2">锚点222222222222222222222</h2>
+<p>有一定高度的层</p>
+<h2 id="anchor3">锚点333333333333333333333</h2>
+<p>有一定高度的层</p>
+<h2 id="anchor4">锚点444444444444444444444</h2>
+<p>有一定高度的层</p>
+<h2 id="anchor5">锚点555555555555555555555</h2>
+<p class="extra">底端需要一定高度才可以保证滚动条有足够高度让标题5到达指定位置</p>
+<div id="menu"><a href="#anchor1">去往锚点1</a> <a href="#anchor2">去往锚点2</a> <a href="#anchor3">去往锚点3</a> <a href="#anchor4">去往锚点4</a> <a href="#anchor5">去往锚点5</a></div>
+<span id="btn">&larr;目标在这里</span>
+<p id="btn1">&larr;目标在这里1</p>
+
+
+</body>
+<script>
+
+// series: [{
+// 			name: '吃饺子',       ip
+//             type: 'line',
+//             symbol: 'circle', // 拐点类型
+//             smooth: true, // 当为true时，就是光滑的曲线（默认为true）；当为false，就是折线不是曲线的了，那这个设为true，下面的（吃饭）数据中设置smooth为false，这个就不是光滑的曲线了。
+//             symbolSize: 3, // 拐点圆的大小
+//             itemStyle: {
+//                 normal: {
+//                     color: '#0bb6db', // 折线条的颜色
+//                     borderColor: '#0bb6db', // 拐点边框颜色
+//                 }
+//             },
+//             data: ['162', '192', '140', '182', '162', '209', '186', '178', '230', '196', '219', '234', '256', '201', '172', '182', '192', '168', '176', '189', '167', '174', '152', '162', '182', '162']       cpu
+//         }]
+
+
+// id  serverIP  cpu
+// 1  100.151  1.90
+// 2  100.151  3.40
+// 3  100.151  5.90
+// 4  100.151  6.30           
+// 5  100.151  34.20
+// 1  100.155  8.70
+// 2  100.155  7.80
+// 3  100.155  8.90
+// 4  100.155  14.90
+// 5  100.155  4.30
+
+var formatDate = function (date,count) {  
+    var y = date.getFullYear();  
+    var m = date.getMonth() + 1;  
+    m = m < 10 ? '0' + m : m;  
+    var d = date.getDate();  
+    d = d < 10 ? ('0' + d) : d;
+    d = parseInt(d) + i  
+    return y + '-' + m + '-' + d;  
+};  
+
+var temp  = [];
+console.log(new Date())
+for(var i=0;i<30;i++){
+	temp.push({
+		time:formatDate(new Date(),i),
+		num:20+i
+	})
+}
+console.log(temp)
+
+</script>
+</html>
